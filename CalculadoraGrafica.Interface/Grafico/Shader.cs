@@ -44,7 +44,7 @@ namespace CalculadoraGrafica.Interface.Grafico
 
             for (int i = 0; i < numberOfUniforms;i++)
             {
-                var key = GL.GetActiveUniforms(_handle, i, out _, out _);
+                var key = GL.GetActiveUniform(_handle, i, out _, out _);
             }
         }
 

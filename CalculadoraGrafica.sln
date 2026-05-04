@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculadoraGrafica.Funcao", "CalculadoraGrafica.Funcao\CalculadoraGrafica.Funcao.csproj", "{0049C0A8-2327-4855-A65D-061B7C7271B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculadoraGrafica.Interface", "CalculadoraGrafica.Interface\CalculadoraGrafica.Interface.csproj", "{AF39784B-0639-48AB-84C7-116B1468838A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -10,5 +14,15 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0049C0A8-2327-4855-A65D-061B7C7271B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0049C0A8-2327-4855-A65D-061B7C7271B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0049C0A8-2327-4855-A65D-061B7C7271B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0049C0A8-2327-4855-A65D-061B7C7271B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF39784B-0639-48AB-84C7-116B1468838A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF39784B-0639-48AB-84C7-116B1468838A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF39784B-0639-48AB-84C7-116B1468838A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF39784B-0639-48AB-84C7-116B1468838A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
