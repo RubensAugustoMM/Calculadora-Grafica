@@ -1,8 +1,8 @@
 namespace CalculadoraGrafica.Funcao.Gramatica
 {
-    public class Numero : NodoBase
+    public class Variavel : NodoBase
     {
-        private static readonly string _regex = @"\d+,?\d*"; 
+        private static readonly string _regex = "[XYZ]";
         public override string[][] Definicoes { get; } =
         [
             [_regex]

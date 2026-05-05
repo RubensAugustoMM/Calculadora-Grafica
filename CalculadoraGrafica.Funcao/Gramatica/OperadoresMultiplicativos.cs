@@ -1,7 +1,11 @@
-namespace CalculadoraGrafica.Funcao.Gramatica;
+using CalculadoraGrafica.Funcao.Gramatica.Atributos;
 
-public enum OperadoresMultiplicativos
+namespace CalculadoraGrafica.Funcao.Gramatica
 {
-    Divisao,
-    Multiplicacao
+    [Lexema("/","*")]
+    public enum OperadoresMultiplicativos 
+    {
+        Divisao = 0,
+        Multiplicacao = 1
+    }
 }

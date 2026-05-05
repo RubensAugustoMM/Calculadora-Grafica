@@ -1,18 +1,15 @@
-namespace CalculadoraGrafica.Funcao.Gramatica;
-
-public class Funcao : NodoBase
+namespace CalculadoraGrafica.Funcao.Gramatica
 {
-    public Expressao Expressao { get; set; }
-    public String FuncaoString { get; private set; }
+    public class Funcao : NodoBase
+    {
+        public override string[][] Definicoes { get; } =
+        [
+            [nameof(Expressao)]
+        ];
 
-    public Funcao(String funcaoString, Expressao expressao)
-    {
-        this.Expressao = expressao;
-        this.FuncaoString = funcaoString;
-    }
-    
-    public override bool Avaliar()
-    {
-        throw new NotImplementedException();
+        public override bool Avaliar()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

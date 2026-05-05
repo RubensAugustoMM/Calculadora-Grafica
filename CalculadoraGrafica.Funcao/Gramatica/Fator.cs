@@ -1,18 +1,20 @@
-namespace CalculadoraGrafica.Funcao.Gramatica;
-
-public class Fator : NodoBase
+namespace CalculadoraGrafica.Funcao.Gramatica
 {
-    public Numero Numero { get; set; }
-    public Fator? FatorDireito { get; set; }
+    public class Fator : NodoBase
+    {
+        private static readonly string _exponecial = "^";
+        public override string[][] Definicoes { get; } =
+        [
+            [nameof(Numero)],
+            [nameof(Variavel)],
+            [nameof(Numero), _exponecial, nameof(Fator)],
+            [nameof(Variavel), _exponecial, nameof(Fator)]
+        ];
 
-    public Fator(Numero numero, Fator? fatorDireito = null)
-    {
-        this.Numero = numero;
-        this.FatorDireito = fatorDireito;
-    }
-    
-    public override bool Avaliar()
-    {
-        throw new NotImplementedException();
+        public override bool Avaliar()
+        {
+            
+            throw new NotImplementedException();
+        }
     }
 }
