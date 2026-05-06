@@ -1,5 +1,8 @@
+using CalculadoraGrafica.Funcao.Gramatica.Atributos;
+
 namespace CalculadoraGrafica.Funcao.Gramatica
 {
+    [Lexema]
     public class Numero : NodoBase
     {
         private static readonly string _regex = @"\d+,?\d*"; 

@@ -1,5 +1,8 @@
+using CalculadoraGrafica.Funcao.Gramatica.Atributos;
+
 namespace CalculadoraGrafica.Funcao.Gramatica
 {
+    [Lexema]
     public class Variavel : NodoBase
     {
         private static readonly string _regex = "[XYZ]";
