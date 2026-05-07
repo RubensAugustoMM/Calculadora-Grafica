@@ -22,4 +22,7 @@
   <ItemGroup>
     <None Include="Shaders/**" CopyToOutputDirectory="PreserveNewest"/>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CalculadoraGrafica.Funcao\CalculadoraGrafica.Funcao.csproj" />
+  </ItemGroup>
 </Project>

@@ -5,7 +5,8 @@ namespace CalculadoraGrafica.Funcao.Gramatica
     public class Fator : NodoBase
     {
         [Lexema]
-        public static string Exponecial { get; } = "^";
+        public static string Exponecial { get; } = @"[\^]";
+        
         public override string[][] Definicoes { get; } =
         [
             [nameof(Numero)],
