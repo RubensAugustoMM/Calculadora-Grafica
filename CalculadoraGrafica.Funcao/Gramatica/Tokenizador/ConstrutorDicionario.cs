@@ -24,7 +24,7 @@ static class ConstrutorDicionario
             if (propriedadeDefinicao == null)
                 continue;
             
-            var instancia = Activator.CreateInstance(tipo);
+            var instancia = System.Runtime.Serialization.FormatterServices.GetUninitializedObject(tipo);
             if (propriedadeDefinicao.GetValue(instancia) is not string[][] definicoes)
                 continue;
             if (definicoes.Length != 1)

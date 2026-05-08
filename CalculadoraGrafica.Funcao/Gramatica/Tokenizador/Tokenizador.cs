@@ -5,6 +5,7 @@ namespace CalculadoraGrafica.Funcao.Gramatica.Tokenizador
     public class Tokenizador
     {
         private readonly string _texto;
+        private int Posicao;
         public List<Token> Tokens { get; private set; }
         
         public Tokenizador(string texto)
@@ -16,28 +17,20 @@ namespace CalculadoraGrafica.Funcao.Gramatica.Tokenizador
 
         public List<Token> Tokenizar()
         {
-            var subString = _texto;
-            int i = 0;
-            while ( subString.Length != 0)
+            Posicao = 0;
+            while ( Posicao < _texto.Length )
             {
                 Match? match = null;
                 foreach (var keyValuePair in ConstrutorDicionario.Dicionario)
                 {
-                    match = Regex.Match(subString, "^" + keyValuePair.Key);
+                    match = Regex.Match(_texto.Substring(Posicao), "^" + keyValuePair.Key);
                     if (!match.Success)
                         continue;
-                    Tokens.Add(new Token(keyValuePair.Value, i,match.Value ));
+                    Tokens.Add(new Token(keyValuePair.Value, Posicao,match.Value ));
                     break;
                 }
 
-                if (match is { Success: false })
-                {
-                    subString = subString.Substring(1);
-                    i++;
-                    continue;
-                }
-                subString = subString.Substring(match?.Length ?? 0);
-                i++;
+                Posicao++;
             }
             return Tokens;
         }
