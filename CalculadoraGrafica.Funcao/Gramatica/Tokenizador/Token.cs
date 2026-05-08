@@ -1,4 +1,5 @@
 using System.Reflection;
+using System.Text.RegularExpressions;
 using CalculadoraGrafica.Funcao.Gramatica.Atributos;
 
 namespace CalculadoraGrafica.Funcao.Gramatica.Tokenizador;
@@ -31,11 +32,12 @@ public record Token
             var atributo = Tipo.GetCustomAttribute<Lexema>();
             if (atributo == null)
                 return;
-            var i = atributo.Simbolos.Select(x => x == Texto).Index().FirstOrDefault();
-            var instancia = Enum.ToObject(Tipo, i.Index);
-            if (instancia == null)
+            var correspondencia = atributo.Simbolos.Select((simbolo, index) => 
+                new {simbolo, index})
+                .FirstOrDefault(x => Regex.IsMatch(Texto, x.simbolo));
+            if (correspondencia == null)
                 return;
-            Valor = instancia;
+            Valor = Enum.ToObject(Tipo, correspondencia.index);
             return;
         }
 
